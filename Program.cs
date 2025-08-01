@@ -1,13 +1,11 @@
-﻿namespace OddEven
+﻿namespace square
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            int n = 10;
-            OddEven oddEven = new OddEven();
-            oddEven.Oddeven(n);
-            oddEven.display(n);
+            sq s = new sq();
+            s.sqre(9);
         }
     }
 }
