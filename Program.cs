@@ -1,13 +1,12 @@
-﻿namespace reverse
+﻿namespace sumofdigits
 {
     public class Program
     {
         public static void Main(string[] args)
         {
-            Reverse r = new Reverse();
-            r.rev(12345);
-            r.rev(98765);
-            r.rev(456);
+            Sum s = new Sum();
+            s.sum(12345);
+            s.sum(5472);
 
         }
     }
