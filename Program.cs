@@ -1,18 +1,14 @@
-﻿using System.Security.Cryptography.X509Certificates;
-
-namespace pno
+﻿namespace reverse
 {
     public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            number Number = new number();
-            int m = 5;
-            int x = -10;
-            int y = 0;
-            Number.calc(m);
-            Number.calc(x);
-            Number.calc(y);
+            Reverse r = new Reverse();
+            r.rev(12345);
+            r.rev(98765);
+            r.rev(456);
+
         }
     }
 }
