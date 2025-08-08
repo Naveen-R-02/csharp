@@ -1,13 +1,12 @@
-﻿namespace sumofdigits
+﻿namespace person
 {
     public class Program
     {
         public static void Main(string[] args)
         {
-            Sum s = new Sum();
-            s.sum(12345);
-            s.sum(5472);
-
+            person p = new person();
+            p.names();
+            p.display();
         }
     }
 }
