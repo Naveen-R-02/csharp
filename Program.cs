@@ -1,12 +1,12 @@
-﻿namespace person
+﻿namespace ConstructorChaining
 {
     public class Program
     {
         public static void Main(string[] args)
         {
-            person p = new person();
-            p.names();
-            p.display();
+            Def1 d = new Def1("Naveen", 19);
+            d.display();
+
         }
     }
 }
