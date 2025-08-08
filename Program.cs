@@ -1,12 +1,14 @@
-﻿namespace ConstructorChaining
+﻿namespace DataEncapsulation
 {
     public class Program
     {
         public static void Main(string[] args)
         {
-            Def1 d = new Def1("Naveen", 19);
-            d.display();
-
+            DataenCapsule dc = new DataenCapsule();
+            dc.Name = "Naveen";
+            dc.Age = 19;
+            dc.display();
+            
         }
     }
 }
