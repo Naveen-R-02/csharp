@@ -1,14 +1,13 @@
-﻿namespace DataEncapsulation
+﻿namespace bank_account
 {
     public class Program
     {
         public static void Main(string[] args)
         {
-            DataenCapsule dc = new DataenCapsule();
-            dc.Name = "Naveen";
-            dc.Age = 19;
-            dc.display();
-            
+            sales_acc s = new sales_acc();
+            s.deposit(25000);
+            s.withdraw(30000);
+            s.interest(100, 5, 60);
         }
     }
 }
