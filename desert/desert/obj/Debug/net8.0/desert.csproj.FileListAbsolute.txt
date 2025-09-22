@@ -1,0 +1,14 @@
+C:\Users\lisha\OneDrive\Documents\C#\desert\desert\obj\Debug\net8.0\desert.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lisha\OneDrive\Documents\C#\desert\desert\obj\Debug\net8.0\desert.AssemblyInfoInputs.cache
+C:\Users\lisha\OneDrive\Documents\C#\desert\desert\obj\Debug\net8.0\desert.AssemblyInfo.cs
+C:\Users\lisha\OneDrive\Documents\C#\desert\desert\obj\Debug\net8.0\desert.csproj.CoreCompileInputs.cache
+C:\Users\lisha\OneDrive\Documents\C#\desert\desert\bin\Debug\net8.0\desert.exe
+C:\Users\lisha\OneDrive\Documents\C#\desert\desert\bin\Debug\net8.0\desert.deps.json
+C:\Users\lisha\OneDrive\Documents\C#\desert\desert\bin\Debug\net8.0\desert.runtimeconfig.json
+C:\Users\lisha\OneDrive\Documents\C#\desert\desert\bin\Debug\net8.0\desert.dll
+C:\Users\lisha\OneDrive\Documents\C#\desert\desert\bin\Debug\net8.0\desert.pdb
+C:\Users\lisha\OneDrive\Documents\C#\desert\desert\obj\Debug\net8.0\desert.dll
+C:\Users\lisha\OneDrive\Documents\C#\desert\desert\obj\Debug\net8.0\refint\desert.dll
+C:\Users\lisha\OneDrive\Documents\C#\desert\desert\obj\Debug\net8.0\desert.pdb
+C:\Users\lisha\OneDrive\Documents\C#\desert\desert\obj\Debug\net8.0\desert.genruntimeconfig.cache
+C:\Users\lisha\OneDrive\Documents\C#\desert\desert\obj\Debug\net8.0\ref\desert.dll
