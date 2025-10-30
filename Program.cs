@@ -35,7 +35,6 @@ class PrinterQueueProgram
                     {
                         string printingDoc = printerQueue.Dequeue();
                         Console.WriteLine($"Printing: {printingDoc}");
-                        // Simulate printing delay
                         Thread.Sleep(1000);
                         Console.WriteLine($"{printingDoc} printed successfully!");
                     }
@@ -71,3 +70,4 @@ class PrinterQueueProgram
         }
     }
 }
+
