@@ -1,73 +1,139 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading;
-
-class PrinterQueueProgram
+﻿namespace studentmanagementsystem
 {
-    static void Main()
+    class Student
     {
-        Queue<string> printerQueue = new Queue<string>();
-        int choice = 0;
+        public int Id;
+        public string Name;
+        public double Marks;
 
-        while (choice != 4)
+        public Student(int id, string name, double marks)
         {
-            Console.WriteLine("\n=== PRINTER QUEUE MENU ===");
-            Console.WriteLine("1. Add Document");
-            Console.WriteLine("2. Print Document");
-            Console.WriteLine("3. View Queue");
-            Console.WriteLine("4. Exit");
-            Console.Write("Enter your choice: ");
+            Id = id;
+            Name = name;
+            Marks = marks;
+        }
 
-            choice = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine();
+        public void Display()
+        {
+            Console.WriteLine($"ID: {Id}, Name: {Name}, Marks: {Marks}");
+        }
+    }
 
-            switch (choice)
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List<Student> students = new List<Student>();
+            int choice;
+
+            do
             {
-                case 1:
-                    Console.Write("Enter document name: ");
-                    string docName = Console.ReadLine();
-                    printerQueue.Enqueue(docName);
-                    Console.WriteLine($"'{docName}' added to the print queue.");
-                    break;
+                Console.WriteLine("\n=== Student Management System ===");
+                Console.WriteLine("1. Add Student");
+                Console.WriteLine("2. Display All Students");
+                Console.WriteLine("3. Search Student by ID");
+                Console.WriteLine("4. Remove Student by ID");
+                Console.WriteLine("5. Display Topper of Class");
+                Console.WriteLine("6. Exit");
+                Console.Write("Enter your choice: ");
+                choice = Convert.ToInt32(Console.ReadLine());
 
-                case 2:
-                    if (printerQueue.Count > 0)
-                    {
-                        string printingDoc = printerQueue.Dequeue();
-                        Console.WriteLine($"Printing: {printingDoc}");
-                        Thread.Sleep(1000);
-                        Console.WriteLine($"{printingDoc} printed successfully!");
-                    }
-                    else
-                    {
-                        Console.WriteLine("No documents to print!");
-                    }
-                    break;
+                switch (choice)
+                {
+                    case 1:
+                        Console.Write("Enter ID: ");
+                        int id = Convert.ToInt32(Console.ReadLine());
+                        Console.Write("Enter Name: ");
+                        string name = Console.ReadLine();
+                        Console.Write("Enter Marks: ");
+                        double marks = Convert.ToDouble(Console.ReadLine());
+                        students.Add(new Student(id, name, marks));
+                        Console.WriteLine("Student Added Successfully!");
+                        break;
 
-                case 3:
-                    if (printerQueue.Count > 0)
-                    {
-                        Console.WriteLine("Documents in queue:");
-                        foreach (var doc in printerQueue)
+                    case 2:
+                        if (students.Count == 0)
+                            Console.WriteLine("No students found!");
+                        else
                         {
-                            Console.WriteLine("- " + doc);
+                            Console.WriteLine("\nList of Students:");
+                            foreach (var s in students)
+                                s.Display();
                         }
-                    }
-                    else
-                    {
-                        Console.WriteLine("Print queue is empty!");
-                    }
-                    break;
+                        break;
 
-                case 4:
-                    Console.WriteLine("Exiting program...");
-                    break;
+                    case 3:
+                        Console.Write("Enter Student ID to Search: ");
+                        int searchId = Convert.ToInt32(Console.ReadLine());
+                        Student found = null;
 
-                default:
-                    Console.WriteLine("Invalid choice. Try again.");
-                    break;
-            }
+                        // Simple linear search
+                        foreach (var s in students)
+                        {
+                            if (s.Id == searchId)
+                            {
+                                found = s;
+                                break;
+                            }
+                        }
+
+                        if (found != null)
+                            found.Display();
+                        else
+                            Console.WriteLine("Student not found!");
+                        break;
+
+                    case 4:
+                        Console.Write("Enter Student ID to Remove: ");
+                        int removeId = Convert.ToInt32(Console.ReadLine());
+                        Student toRemove = null;
+
+                        // Simple check to remove
+                        foreach (var s in students)
+                        {
+                            if (s.Id == removeId)
+                            {
+                                toRemove = s;
+                                break;
+                            }
+                        }
+
+                        if (toRemove != null)
+                        {
+                            students.Remove(toRemove);
+                            Console.WriteLine("Student removed successfully!");
+                        }
+                        else
+                            Console.WriteLine("Student not found!");
+                        break;
+
+                    case 5:
+                        if (students.Count == 0)
+                            Console.WriteLine("No students to evaluate!");
+                        else
+                        {
+                            // Simple way to find topper
+                            Student topper = students[0];
+                            foreach (var s in students)
+                            {
+                                if (s.Marks > topper.Marks)
+                                    topper = s;
+                            }
+                            Console.WriteLine("\nTopper of the Class:");
+                            topper.Display();
+                        }
+                        break;
+
+                    case 6:
+                        Console.WriteLine("Exiting... Goodbye!");
+                        break;
+
+                    default:
+                        Console.WriteLine("Invalid Choice! Please try again.");
+                        break;
+                }
+
+            } while (choice != 6);
         }
     }
 }
-
